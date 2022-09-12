@@ -41,12 +41,8 @@
 11. Accuracies and Confusion matrices as below<br>
 
 
-![image](https://user-images.githubusercontent.com/13360641/111072795-290bcc80-8502-11eb-8074-d72eab648850.png)
-
-![image](https://user-images.githubusercontent.com/13360641/111072851-6b350e00-8502-11eb-85f7-215d9acc71d5.png)
 
 <hr>
 
-Blogs - https://tejasta.medium.com/ <br>
-LinkedIn - https://www.linkedin.com/in/tejas-ta/ <br>
-Email - tejasta@gmail.com <hr>
+Blogs - https://medium.com/@yohgut/ <br>
+Email - yohgut@gmail.com <hr>
