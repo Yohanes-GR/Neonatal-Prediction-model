@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Neonatal Disease Prediction</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="static/images/icons/heart-icon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/css/util.css">
+	<link rel="stylesheet" type="text/css" href="static/css/main.css">
+<!--===============================================================================================-->
+
+<style>
+::-webkit-input-placeholder {
+  color: red;
+}
+
+:-ms-input-placeholder { 
+  color: red;
+}
+
+::placeholder {
+  color: red;
+}
+<!--------------------------------------->
+a:link {
+  color: magenta;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:active {
+  color: blue;
+}
+
+.bg-contact3{
+  background-color: black;
+  color: black;
+}
+<!--------------------------------------->
+.contact3-form-title{
+color:black;
+font-size: 30px;
+font-family: Arial, Helvetica, sans-serif;
+font-variant: normal;
+}
+<!--------------------------------------->
+
+</style>
+</head>
+<body>
+	<div class="bg-contact3" style="background-image: url('static/images/ecg.jpg');">
+		<div class="container-contact3">
+			<div class="wrap-contact3">
+				<form action="{{ url_for('predict')}}" method="post" class="contact3-form validate-form">
+					<span class="contact3-form-title">
+						AI Neonatal Disease Prediction<br>
+						<p>By : Yohanes GR</p>
+						<p>Email - yohgut@gmail.com</p>
+						<a href="https://www.linkedin.com/in/yohanes-gutema/">LinkedIn - Click here</a><br>
+					</span>
+				
+						<div class="form-group">
+							<label for="GA"> Gestational age</label>
+							<select class="form-control" id="GA" name = "GA" required="required" placeholder="Gestational age">
+								<option value="0">Pre-term</option>
+								<option value="1">term</option>
+								<option value="2">post-term</option>
+							
+							</select>
+						</div>
+						
+						<div class="form-group">
+						<!-- TODO : Year to accept only year date picker -->
+							<label for="WBC">WBC (in mm Hg)</label>
+							<input class="form-control" type="number" id="WBC" name="WBC" required="required" placeholder="WBC">
+						</div>
+
+						<div class="form-group">
+							<label for="RR">Resparatory Rate in mg/dl</label>
+							<input class="form-control" type="number" step="any" id="RR" name="RR" required="required" placeholder="Resparatory Rate">
+						</div>
+
+						<div class="form-group">
+							<label for="APGARS">APGAR score</label>
+							<select class="form-control" id="APGARS" name = "APGARS" required="required" placeholder="APGAR score">
+								<option value="0">normal</option>
+								<option value="1">abnromal</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="CRP">C-Reactive Protein</label>
+							<select class="form-control" type="number" id="CRP" name="CRP" required="required" placeholder="CRP">
+								<option value="0">normal</option>
+								<option value="1">abnromal</option>
+							</select>
+						</div>
+              
+						<div class="form-group">
+							<label for="weight">Weight</label>
+							<input class="form-control" id="Weight" name = "Weight" required="required" >
+						</div>
+
+						<div class="form-group">
+							<label for="Grunting">Grunting</label>
+							<select class="form-control" id="Grunting" name = "Grunting" required="required" >
+								<option value="1">yes</option>
+								<option value="0">no</option>
+							</select>
+						</div>	
+						<div class="form-group">
+							<label for="BC">Blood Cultures</label>
+							<select class="form-control" id="BC" name = "BC" required="required" >
+								<option value="1">positive</option>
+								<option value="0">negative</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="SpO2">SpO2</label>
+							<select class="form-control" id="SpO2" name = "SpO2" required="required" >
+								<option value="1">yes</option>
+								<option value="0">no</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="ICSCR">ICSCR</label>
+							<select class="form-control" id="ICSCR" name = "ICSCR" required="required" >
+								<option value="1">yes</option>
+								<option value="0">no</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="resuscitate">resuscitate</label>
+							<select class="form-control" id="resuscitate" name = "resuscitate" required="required" >
+								<option value="1">yes</option>
+								<option value="0">no</option>
+							</select>
+						</div>	<div class="form-group">
+							<label for="LLVW">LLVW</label>
+							<select class="form-control" id="LLVW" name = "LLVW" required="required" >
+								<option value="1">yes</option>
+								<option value="0">no</option>
+							</select>
+						</div>
+
+						<div class="container-contact3-form-btn">
+							<button type="submit" class="contact3-form-btn">
+								Predict
+							</button>
+						</div>
+					</form>
+					
+			</div>
+		</div>
+	</div>	
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-23581568-13');
+</script>
+</body>
+</html>
